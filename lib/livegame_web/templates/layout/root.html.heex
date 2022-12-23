@@ -13,13 +13,13 @@
     <header>
       <section class="container">
         <nav>
+          <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
           <ul>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
+            <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
           </ul>
+          <% end %>
         </nav>
-        <h1>Game of Life made with Phoenix Liveview</h1>
+        <h1>Life Game made with Phoenix LiveView</h1>
       </section>
     </header>
     <%= @inner_content %>
